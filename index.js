@@ -1,21 +1,28 @@
 
 let tbody = document.getElementById("tbody");
-//tbody.append(td_fun());
 
-//fetch function
-fetch("http://localhost:3000/user")
+
+// ------------> fetch function to get data from GitHub pages
+async function gitpages(){
+    const response = await fetch("https://karenpinto1602.github.io/JSON_server/database/db.json");
+    var json_data = await response.json();
+    json_data.user.map(data => {
+        tbody.append(td_fun(data));
+    }) 
+}
+gitpages();
+
+// ------------> fetch function to get the data locally
+/* fetch("http://localhost:3000/user")
     .then(res => res.json())
     .then(json => {
         json.map(data => {
             tbody.append(td_fun(data));
         })
-    })
-
-    /* filter 
-    http://localhost:3000/user?id=1&id=2 */
+    }) */
 
 
-//create td
+//create td from the body
 function td_fun(data){
     let td = document.createElement('tr');
     td.innerHTML = `
