@@ -1,0 +1,44 @@
+{
+    "user": [
+        {
+            "id": 1,
+            "name": "Karen Pinto",
+            "email": "karenpinto1602@gmail.com",
+            "profile": "https://i.picsum.photos/id/1027/2848/4272.jpg?hmac=EAR-f6uEqI1iZJjB6-NzoZTnmaX0oI0th3z8Y78UpKM",
+            "status": "Active",
+            "role": "Admin"
+        },
+        {
+            "id": 2,
+            "name": "Liesha Kumar",
+            "email": "sheez_lee@gmail.com",
+            "profile": "https://i.picsum.photos/id/1026/4621/3070.jpg?hmac=OJ880cIneqAKIwHbYgkRZxQcuMgFZ4IZKJasZ5c5Wcw",
+            "status": "Active",
+            "role": "Owner"
+        },
+        {
+            "id": 3,
+            "name": "Kenneth Pinto",
+            "email": "kenny@yahoo.in",
+            "profile": "https://i.picsum.photos/id/1029/4887/2759.jpg?hmac=uMSExsgG8_PWwP9he9Y0LQ4bFDLlij7voa9lU9KMXDE",
+            "status": "Inactive",
+            "role": "Member"
+        },
+        {
+            "id": 4,
+            "name": "Sanchita Suryavanshi",
+            "email": "sanchi_id@gmail.com",
+            "profile": "https://i.picsum.photos/id/1037/5760/3840.jpg?hmac=fZe213BcO2KPQEJKChsdHnVYg-6kAtQMTZV24f1fS94",
+            "status": "Inactive",
+            "role": "Member"
+        },
+        {
+            "id": 5,
+            "name": "Mugundan Sridhar",
+            "email": "mgmgmgmgmg@gmail.com",
+            "profile": "https://i.picsum.photos/id/103/2592/1936.jpg?hmac=aC1FT3vX9bCVMIT-KXjHLhP6vImAcsyGCH49vVkAjPQ",
+            "status": "Active",
+            "role": "Member"
+        }
+    ]
+}

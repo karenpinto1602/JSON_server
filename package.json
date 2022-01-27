@@ -1,0 +1,23 @@
+{
+  "name": "json_server",
+  "version": "1.0.0",
+  "description": "<br/>",
+  "main": "index.js",
+  "scripts": {
+    "start": "json-server --watch ./database/db.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karenpinto1602/JSON_server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/karenpinto1602/JSON_server/issues"
+  },
+  "homepage": "https://github.com/karenpinto1602/JSON_server#readme",
+  "dependencies": {
+    "json-server": "^0.17.0"
+  }
+}
