@@ -13,13 +13,15 @@
     <div class="container mx-auto max-w-4xl">
         <h1 class="text-center text-4xl text-indigo-400 py-11">Json Server</h1>
         <div id="select-filter" class="px-6 py-6 flex justify-end">
-            <select id="select-status" class="px-4 shadow font-semibold border-solid border-2 outline-indigo-500">
-                <option value="Active" class="font-semibold">Status</option>
+            <select id="select-status" onchange="myStatus()"
+                class="px-4 shadow font-semibold border-solid border-2 outline-indigo-500">
+                <option value="0" class="font-semibold">Status</option>
                 <option value="Active" class="font-semibold">Active</option>
                 <option value="Inactive" class="font-semibold">Inactive</option>
             </select>
-            <select id="select-role" class="px-4 mx-3 shadow font-semibold border-solid border-2 outline-indigo-500">
-                <option value="Role" class="font-semibold">Role</option>
+            <select id="select-role" onchange="myRole()"
+                class="px-4 mx-3 shadow font-semibold border-solid border-2 outline-indigo-500">
+                <option value="0" class="font-semibold">Role</option>
                 <option value="Admin" class="font-semibold">Admin</option>
                 <option value="Owner" class="font-semibold">Owner</option>
                 <option value="Member" class="font-semibold">Member</option>
@@ -36,7 +38,7 @@
                 </tr>
             </thead>
             <tbody class="bg-white divide-y divide-gray-200" id="tbody">
-                <tr>
+                <tr id="tr-main">
 
                 </tr>
             </tbody>

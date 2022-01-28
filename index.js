@@ -1,14 +1,40 @@
 
 let tbody = document.getElementById("tbody");
-let sFilter = document.getElementById("select-filter");
+var sel_status = document.getElementById("select-status").value;
+var sel_role = document.getElementById("select-role").value;
+
+function myStatus(){
+    sel_status = document.getElementById("select-status").value;
+    gitpages();
+}
+
+function myRole(){
+    sel_role = document.getElementById("select-role").value;
+    gitpages();
+}
 
 // ------------> fetch function to get data from GitHub pages
-async function gitpages(){
-    var sel_status = document.getElementById("select-status").value;
-    console.log(sel_status);
-    const response = await fetch(`https://karenpinto1602.github.io/JSON_server/database/db.json ? id=1`);
+async function gitpages(){   
+    var response; 
+    if(sel_status=='0' && sel_role=='0'){
+        response = await fetch(`https://my-json-server.typicode.com/karenpinto1602/JSON_server/user`);
+    }else if(sel_status=='0'){
+        response = await fetch(`https://my-json-server.typicode.com/karenpinto1602/JSON_server/user?role=${sel_role}`);
+    }else if(sel_role=='0'){
+        response = await fetch(`https://my-json-server.typicode.com/karenpinto1602/JSON_server/user?status=${sel_status}`);
+    }else{
+        response = await fetch(`https://my-json-server.typicode.com/karenpinto1602/JSON_server/user?status=${sel_status}&role=${sel_role}`);
+    }
     var json_data = await response.json();
-    json_data.user.map(data => {
+    var child = tbody.lastElementChild; 
+    //removing all the tr elements in the tbody
+    while (child) {
+        tbody.removeChild(child);
+        child = tbody.lastElementChild;
+    }
+
+    json_data.map(data => {      
+        //appending the filtered tr elements
         tbody.append(td_fun(data));
     }) 
 }
@@ -18,10 +44,12 @@ gitpages();
 /* fetch("http://localhost:3000/user")
     .then(res => res.json())
     .then(json => {
+        //Add the filtering functions and respective queries
         json.map(data => {
             tbody.append(td_fun(data));
         })
-    }) */
+    }) 
+*/
 
 
 //create td from the body
@@ -55,24 +83,4 @@ function td_fun(data){
     return td;
 }
 
-
-//sFilter.append(select_fun())
-
-function select_fun(){
-    let sd = document.createElement('div');
-    sd.innerHTML = `
-    <select id="select-status" class="px-4 shadow font-semibold border-solid border-2 outline-indigo-500">
-                <option value="Status" class="font-semibold">Status</option>
-                <option value="Active" class="font-semibold">Active</option>
-                <option value="Inactive" class="font-semibold">Inactive</option>
-    </select>
-    <select id="select-role" class="px-4 mx-3 shadow font-semibold border-solid border-2 outline-indigo-500">
-                <option value="Role" class="font-semibold">Role</option>
-                <option value="Admin" class="font-semibold">Admin</option>
-                <option value="Owner" class="font-semibold">Owner</option>
-                <option value="Member" class="font-semibold">Member</option>
-    </select>
-    `;    
-    return sd;
-}
 
